@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Email Security Extension",
+  "version": "0.1.0",
+  "description": "Scans Gmail emails for risky URLs, warns on click, and provides an isolated sandbox viewer.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["src/content.js"],
+      "css": ["src/gmail.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Email Security Dashboard",
+    "default_popup": "src/action.html"
+  }
+}

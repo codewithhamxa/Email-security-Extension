@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Interactive URL Sandbox</title>
+    <style>
+      body { margin: 0; font-family: Arial, sans-serif; background: #111827; color: #f9fafb; }
+      header { display: flex; gap: 8px; padding: 10px; background: #1f2937; position: sticky; top: 0; }
+      input { flex: 1; border-radius: 6px; border: 1px solid #374151; background: #111827; color: #f9fafb; padding: 8px; }
+      button { border: 0; border-radius: 6px; background: #2563eb; color: white; padding: 8px 12px; cursor: pointer; }
+      iframe { width: 100%; height: calc(100vh - 58px); border: 0; background: white; }
+      small { display: block; padding: 0 10px 10px; color: #9ca3af; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <input id="urlInput" type="url" placeholder="https://example.com" />
+      <button id="openBtn">Open in Isolated Frame</button>
+    </header>
+    <small>
+      Isolation mode: sandboxed iframe with restricted capabilities. Network and page scripts run inside frame only.
+      For stronger isolation in production, route traffic through a remote rendering/sandbox backend.
+    </small>
+    <iframe id="sandboxFrame" sandbox="allow-forms allow-scripts allow-pointer-lock allow-modals"></iframe>
+    <script src="sandbox.js"></script>
+  </body>
+</html>

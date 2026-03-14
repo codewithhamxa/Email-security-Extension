@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Email Security Dashboard</title>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 20px; margin: 0; background: #f5f7fb; }
+      .grid { display: grid; grid-template-columns: repeat(3, minmax(140px, 1fr)); gap: 12px; }
+      .card { background: white; border-radius: 12px; box-shadow: 0 1px 4px rgba(0,0,0,.08); padding: 14px; }
+      .title { color: #5f6368; font-size: 13px; margin-bottom: 8px; }
+      .value { font-size: 22px; font-weight: bold; }
+      table { width: 100%; border-collapse: collapse; margin-top: 18px; background: white; }
+      th, td { text-align: left; padding: 10px; border-bottom: 1px solid #eee; font-size: 13px; }
+      .safe { color: #1e8e3e; font-weight: bold; }
+      .suspicious { color: #f9ab00; font-weight: bold; }
+      .malicious { color: #d93025; font-weight: bold; }
+      #timeline { margin-top: 14px; }
+      #timeline li { margin-bottom: 6px; }
+    </style>
+  </head>
+  <body>
+    <h2>Email Security Dashboard</h2>
+    <div class="grid" id="summary"></div>
+
+    <h3>Recent Activity</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th><th>Arrival</th><th>Scanned</th><th>Status</th><th>URLs</th>
+        </tr>
+      </thead>
+      <tbody id="activity"></tbody>
+    </table>
+
+    <h3>Activity Timeline</h3>
+    <ul id="timeline"></ul>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
