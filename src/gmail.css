@@ -1,0 +1,9 @@
+tr.zA.ese-suspicious {
+  outline: 2px solid #ffcc00 !important;
+  outline-offset: -2px;
+}
+
+tr.zA.ese-malicious {
+  outline: 2px solid #e53935 !important;
+  outline-offset: -2px;
+}
